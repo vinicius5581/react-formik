@@ -25,7 +25,7 @@ const App = ({
       <option value="free">Free</option>
       <option value="premium">Premium</option>
     </Field>
-    <button disabled={isSubmitting}>Submit</button>
+    <button type="submit" disabled={isSubmitting}>Submit</button>
   </Form>
 )
 
@@ -44,6 +44,7 @@ const FormikApp = {
   }),
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
     setTimeout(() => {
+      console.log(values)
       if(values.email === 'vini@test.io') {
         setErrors({ email: 'That email is already taken' })
       } else {
